@@ -1,0 +1,33 @@
+<!-- Add project button at the top -->
+<a [routerLink] ="['../../add/Sprint']"class="btn btn-primary mb-2">Add Sprint</a>
+
+<!-- Table to display projects with delete and edit buttons -->
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>SprintName</th>
+      <th>SprintGoal</th>
+      <th>UserStories</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of sprints; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.SprintName }}</td>
+      <td>{{item.SprintGoal || 'N/A' }}</td>
+      <td>{{ item.UserStories }}</td>
+      <td>
+        <!-- Edit button -->
+        <a [routerLink] ="['../../edit/Sprint']" class="btn btn-warning btn-sm mr-2">Edit</a>
+        
+        <!-- Delete button -->
+     
+        
+          <!-- <button class="btn btn-danger btn-sm" *ngIf="project.Id !== undefined" (click)="deleteProject(project.Id)">Delete</button> -->
+        
+      </td>
+    </tr>
+  </tbody>
+</table>

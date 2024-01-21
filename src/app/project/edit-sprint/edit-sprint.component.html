@@ -1,0 +1,23 @@
+<form [formGroup]="sprintForm" (ngSubmit)="onSubmit()">
+    <div class="form-group mt-3">
+        <label for="">Name Of Sprint </label>
+        <input type="text" formControlName="name" class="form-control" placeholder="Entrez le nom">
+    </div>
+    <div class="form-group mt-3">
+        <label for="">SprintGoal</label>
+        <input type="text" formControlName="SprintGoal" class="form-control" placeholder="Entrez la SprintGoal">
+    </div>
+    <div class="form-group mt-3">
+        <label>Project ID </label>
+        <input type="number" formControlName="Project Id" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+</form>
+
+
+<div *ngIf="sprintData">
+    <h3>Project Added Successfully!</h3>
+    <p>Libelle: {{ sprintData.SprintName }}</p>
+    <p>Description: {{ sprintData.SprintGoal }}</p>
+</div>

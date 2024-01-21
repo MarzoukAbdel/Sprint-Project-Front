@@ -1,0 +1,33 @@
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <div class="form-group mt-3">
+        <label for="">Libelle</label>
+        <input type="text" formControlName="Libelle" class="form-control" placeholder="Entrez le Libelle">
+    </div>
+    <div class="form-group mt-3">
+        <label for="">Description</label>
+        <input type="text" formControlName="Description" class="form-control" placeholder="Entrez la Description">
+    </div>
+    <div class="form-group mt-3">
+        <label for="">SprintDays</label>
+        <input type="number" formControlName="SprintDays" class="form-control" placeholder="Entrez le SprintDays">
+    </div>
+    <div class="form-group mt-3">
+        <label>DateDebut</label>
+        <input type="date" formControlName="DateDebut" class="form-control">
+    </div>
+    <div class="form-group mt-3">
+        <label>DateFin</label>
+        <input type="date" formControlName="DateFin" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+</form>
+
+
+<div *ngIf="projectData">
+    <h3>Project Added Successfully!</h3>
+    <p>Libelle: {{ projectData.Libelle }}</p>
+    <p>Description: {{ projectData.Description }}</p>
+    <p>Sprint Days: {{ projectData.SprintDays }}</p>
+    <!-- Display other properties as needed -->
+</div>
